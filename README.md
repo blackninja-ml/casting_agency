@@ -13,7 +13,7 @@ project is a capstone project of Udacity's Full Stack Web Developer Nanodegree P
 ### Installing Dependencies
 The following dependencies can be installed through running this command in your local command line tool.
 
-```pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 This app requires Python 3.7 to run.
 
@@ -31,19 +31,18 @@ POST /actors and /movies and
 PATCH /actors/ and /movies/
 
 ### Configure roles on Auth0
-Assistant
-can get:actors, get:movies
-Director
-can get:actors, get:movies, post:actors, delete:actors, patch:actors, patch:movies
-cannot post:movies, delete:movies
-Producer
-can perform all actions
+Casting Assistant
+-`get:actors` `get:movies`
+Casting Director
+-`get:actors`, `get:movies`, `post:actors`, `delete:actors`, `patch:actors`, `patch:movies`
+Executive Producer
+-can perform all actions
 
 ### Create new API permissions for the created roles:
-get:actors, get:movies
-post:actors, post:movies
-patch:actors, patch:movies
-delete:actors, delete:movies
+-get:actors, get:movies
+-post:actors, post:movies
+-patch:actors, patch:movies
+-delete:actors, delete:movies
 
 # Testing
 ## Testing endpoints with Postman.
