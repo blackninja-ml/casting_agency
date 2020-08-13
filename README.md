@@ -32,10 +32,15 @@ PATCH /actors/ and /movies/
 
 ### Configure roles on Auth0
 -Casting Assistant
+
    -`get:actors` `get:movies`
+   
 -Casting Director
+
    -`get:actors`, `get:movies`, `post:actors`, `delete:actors`, `patch:actors`, `patch:movies`
+   
 -Executive Producer
+
    -can perform all actions
 
 ### Create new API permissions for the created roles:
