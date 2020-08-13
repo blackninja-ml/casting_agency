@@ -52,7 +52,7 @@ PATCH /actors/ and /movies/
    Run testing with the imported postman jsons collections with designated JWT.
    Export the result of collection and then upload them to the github for review.
 
-#Authors
+# Authors
 Po Tin Mak and The Udacity are the authos of this project.
 
 
