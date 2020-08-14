@@ -12,7 +12,7 @@ def create_app(test_config=None):
   # create and configure the app
   app = Flask(__name__)
   setup_db(app)
-  setup_migrations(app)
+  #setup_migrations(app)
   CORS(app)
   @app.after_request
   def after_request(response):
@@ -27,7 +27,7 @@ def create_app(test_config=None):
   def index():
     return jsonify({
       "success": True,
-      "message": "Welcome to xxx"
+      "message": "Welcome to America!"
     })
 
   @app.route('/actors', methods=['GET'])
@@ -87,10 +87,10 @@ def create_app(test_config=None):
         abort (404)
       
       actor = Actor(name=data['actor'], age=data['age'], genre=data['genre'] )
-      action.insert()
+      actor.insert()
       return jsonify({
         "success":True,
-        "actor_id" actor.id,
+        "actor_id":actor.id,
       })
     except:
       abort(422)
@@ -107,7 +107,7 @@ def create_app(test_config=None):
       movie.delete()
       return jsonify({
         "success":True,
-        "movie_id" movie.id,
+        "movie_id": movie.id,
       })
     
     except:
@@ -136,7 +136,7 @@ def create_app(test_config=None):
   @app.route('/actors/<int:actor_id>', methods=['PATCH'])
   @requires_auth('patch:actors')
   def patch_actor(jwt, actor_id):
-    actor = Actor.query.(Actor.id==actor_id).one_or_none()
+    actor = Actor.query(Actor.id==actor_id).one_or_none()
 
     if actor is None:
       abort(404)
@@ -256,12 +256,12 @@ def create_app(test_config=None):
   def server_error(error):
     return jsonify({
       "succes": False,
-      "message": "Server Error"
-      "error": 500,
+      "message": "Server Error",
+      "error": 500
     }), 500
   @app.errorhandler(405)
   def not_allowed(error):
-    return jsonif({
+    return jsonify({
       "success": False,
       "message": "Not Allowed",
       "error": 405
@@ -285,7 +285,7 @@ def create_app(test_config=None):
 
   @app.errorhandler(AuthError)
   def auth_error(error):
-    return jsonif({
+    return jsonify({
       "success": False,
       "message": error.error,
       "error": error.status_code,
@@ -295,6 +295,7 @@ def create_app(test_config=None):
 
 
 APP = create_app()
-
+'''
 if __name__ == '__main__':
     APP.run(host='0.0.0.0', port=8080, debug=True)
+'''
