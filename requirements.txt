@@ -24,4 +24,4 @@ Werkzeug==0.16.0
 django
 gunicorn
 django-heroku
-python_version==3.7.3
+
