@@ -60,7 +60,7 @@ PATCH /actors/ and /movies/
 # Authors
 Po Tin Mak and The Udacity are the authos of this project.
 
-# URL for an App
+# URL for the App
  https://protected-sands-50014.herokuapp.com
 
 
